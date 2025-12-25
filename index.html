@@ -17,7 +17,7 @@
         }
 
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(5,5,5,1)), 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(5,5,5,1)), 
                         url('https://raw.githubusercontent.com/GrokMultiverse/asset-s/d3ae39ad61ae3d9045bbcbe94b87cb04932c56ab/banner.jpg');
             background-size: cover;
             background-position: center;
@@ -50,15 +50,16 @@
             background: linear-gradient(90deg, #00f2ff, #0072ff);
             color: #000;
             font-weight: 800;
-            padding: 0.6rem 1.5rem;
+            padding: 0.7rem 1.8rem;
             border-radius: 99px;
             box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
             transition: 0.3s;
+            display: inline-block;
         }
 
         .btn-whitelist:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(0, 242, 255, 0.5);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.6);
         }
 
         .btn-status {
@@ -67,20 +68,19 @@
             border-radius: 12px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
             font-size: 0.75rem;
             text-align: center;
         }
 
         .status-stay-tuned {
-            background: rgba(0, 242, 255, 0.1);
+            background: rgba(0, 242, 255, 0.05);
             color: #00f2ff;
             border: 1px solid rgba(0, 242, 255, 0.2);
         }
 
         .status-locked {
-            background: rgba(255, 255, 255, 0.05);
-            color: #555;
+            background: rgba(255, 255, 255, 0.03);
+            color: #444;
             border: 1px solid rgba(255, 255, 255, 0.02);
             cursor: not-allowed;
         }
@@ -106,15 +106,22 @@
     <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto sticky top-0 z-50 bg-[#050505]/80 backdrop-blur-md">
         <div class="flex items-center gap-4">
             <img src="https://raw.githubusercontent.com/GrokMultiverse/asset-s/d3ae39ad61ae3d9045bbcbe94b87cb04932c56ab/logo.png" alt="Logo" class="w-10 h-10 rounded-full border border-cyan-500/20">
-            <span class="text-xl font-black tracking-tighter italic neon-text">GROK MULTIVERSE</span>
+            <span class="text-xl font-black tracking-tighter italic text-white neon-text">GROK MULTIVERSE</span>
         </div>
-        <a href="https://t.me/grokmultiverse" target="_blank" class="btn-whitelist text-xs">JOIN WHITELIST</a>
+        <div class="hidden md:flex items-center gap-6">
+            <a href="https://x.com/GrokMultiverse" target="_blank" class="text-gray-400 hover:text-white transition"><i class="fab fa-x-twitter text-xl"></i></a>
+            <a href="https://t.me/grokmultiverse" target="_blank" class="text-gray-400 hover:text-white transition"><i class="fab fa-telegram text-xl"></i></a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMP4zBzIFqwZsBhi1gu-ozNOLugz67n-ZjJoHn-L56AGrf5Q/viewform?usp=sf_link" target="_blank" class="btn-whitelist text-xs">JOIN WHITELIST</a>
+        </div>
     </nav>
 
     <header class="hero-section">
         <div class="px-6">
-            <h1 class="text-5xl md:text-8xl font-black mb-6 tracking-tight">THE FUTURE IS BOLD</h1>
-            <p class="text-cyan-500 font-light tracking-[0.4em] uppercase text-xs md:text-sm">Multiverse Gateway • Deployed on Solana</p>
+            <h1 class="text-5xl md:text-8xl font-black mb-6 tracking-tight">PHASE 01 COMMENCING</h1>
+            <p class="text-gray-400 max-w-xl mx-auto mb-8 text-sm md:text-base leading-relaxed">
+                Follow our socials and submit your SOL address via the form to secure your spot in the Multiverse.
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMP4zBzIFqwZsBhi1gu-ozNOLugz67n-ZjJoHn-L56AGrf5Q/viewform?usp=sf_link" target="_blank" class="btn-whitelist uppercase tracking-widest">Register Whitelist</a>
         </div>
     </header>
 
@@ -126,10 +133,10 @@
                     <div class="phase-badge" style="color: #00f2ff; background: rgba(0, 242, 255, 0.1);">PHASE 01</div>
                     <h3 class="text-2xl font-bold mb-3">Testnet NFT Mint</h3>
                     <p class="text-gray-400 text-sm mb-8 leading-relaxed">
-                        The primary gate to our ecosystem. Testnet participation is the key requirement for future mainnet access.
+                        The primary gate. Testnet participation is the core requirement for mainnet eligibility and initial ecosystem rewards.
                     </p>
                 </div>
-                <div class="btn-status status-stay-tuned">STAY TUNED</div>
+                <div class="btn-status status-stay-tuned uppercase tracking-widest">Stay Tuned</div>
             </div>
 
             <div class="glass-card opacity-60">
@@ -137,7 +144,7 @@
                     <div class="phase-badge">PHASE 02</div>
                     <h3 class="text-2xl font-bold mb-3 text-gray-400">Mainnet Launch</h3>
                     <p class="text-gray-500 text-sm mb-8 leading-relaxed">
-                        Official collection launch for whitelisted pioneers and verified testnet participants.
+                        Official deployment of the GrokMultiverse premium collection. Exclusive to whitelisted pioneers.
                     </p>
                 </div>
                 <div class="btn-status status-locked">LOCKED 🔒</div>
@@ -148,7 +155,7 @@
                     <div class="phase-badge">PHASE 03</div>
                     <h3 class="text-2xl font-bold mb-3 text-gray-400">Market Listing</h3>
                     <p class="text-gray-500 text-sm mb-8 leading-relaxed">
-                        Integration with Magic Eden and Tensor. Implementing secondary market volume rewards.
+                        Secondary trading enabled on Magic Eden and Tensor. Volume-based staking rewards initialized.
                     </p>
                 </div>
                 <div class="btn-status status-locked">LOCKED 🔒</div>
@@ -159,7 +166,7 @@
                     <div class="phase-badge">PHASE 04</div>
                     <h3 class="text-2xl font-bold mb-3 text-gray-500">Tokenomics</h3>
                     <p class="text-gray-600 text-sm mb-8 leading-relaxed">
-                        Deep dive into $GROK utility, distribution schedules, and long-term treasury management.
+                        Detailed audit and launch of the $GROK utility token. Governance and liquidity farming rewards.
                     </p>
                 </div>
                 <div class="btn-status status-locked">LOCKED 🔒</div>
@@ -170,7 +177,7 @@
                     <div class="phase-badge">PHASE 05</div>
                     <h3 class="text-2xl font-bold mb-3 text-gray-500">Airdrop Claim</h3>
                     <p class="text-gray-600 text-sm mb-8 leading-relaxed">
-                        Rewarding our earliest believers. Final $GROK distribution based on multiverse engagement.
+                        Rewarding our earliest believers. Final $GROK distribution based on cross-phase engagement.
                     </p>
                 </div>
                 <div class="btn-status status-locked">LOCKED 🔒</div>
@@ -180,13 +187,14 @@
     </main>
 
     <footer class="py-20 border-t border-white/5 text-center">
-        <div class="flex justify-center gap-10 mb-8 text-3xl">
-            <a href="https://x.com/GrokMultiverse" target="_blank" class="text-gray-500 hover:text-cyan-400 transition transform hover:scale-110"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://t.me/grokmultiverse" target="_blank" class="text-gray-500 hover:text-cyan-400 transition transform hover:scale-110"><i class="fab fa-telegram"></i></a>
-            <a href="https://github.com/GrokMultiverse" target="_blank" class="text-gray-500 hover:text-cyan-400 transition transform hover:scale-110"><i class="fab fa-github"></i></a>
+        <div class="flex justify-center gap-10 mb-8 text-3xl text-gray-500">
+            <a href="https://x.com/GrokMultiverse" target="_blank" class="hover:text-cyan-400 transition transform hover:scale-110"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://t.me/grokmultiverse" target="_blank" class="hover:text-cyan-400 transition transform hover:scale-110"><i class="fab fa-telegram"></i></a>
+            <a href="https://github.com/GrokMultiverse" target="_blank" class="hover:text-cyan-400 transition transform hover:scale-110"><i class="fab fa-github"></i></a>
         </div>
-        <p class="text-gray-600 text-xs tracking-widest uppercase">© 2025 GrokMultiverse | Community First Ecosystem</p>
+        <p class="text-gray-600 text-xs tracking-widest uppercase italic">© 2025 GrokMultiverse | Community-Driven Ecosystem on Solana</p>
     </footer>
 
 </body>
-</html>
+                </html>
+                
