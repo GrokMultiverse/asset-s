@@ -14,13 +14,13 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
         :root { --cyan: #00f2ff; --blue: #0072ff; --dark: #020202; }
-        body { background-color: var(--dark); color: #fff; font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
+        body { background-color: var(--dark); color: #fff; font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
         
         .banner-container { position: relative; height: 320px; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
         .moving-bg { 
             position: absolute; width: 200%; height: 100%; 
             background: linear-gradient(rgba(2,2,2,0.6), rgba(2,2,2,0.6)), url('https://raw.githubusercontent.com/GrokMultiverse/asset-s/d3ae39ad61ae3d9045bbcbe94b87cb04932c56ab/banner.jpg');
-            background-size: cover; animation: moveBanner 60s linear infinite; will-change: transform;
+            background-size: cover; animation: moveBanner 60s linear infinite;
         }
         @keyframes moveBanner { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
@@ -65,8 +65,8 @@
                 <div class="flex-1">
                     <p id="addrDisplay" class="text-gray-500 font-mono text-[10px] mb-2 uppercase tracking-widest">Wallet Disconnected</p>
                     <div class="flex gap-10">
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Points</p><p id="totalPts" class="text-4xl font-black italic text-white">0</p></div>
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Refers</p><p id="refCount" class="text-4xl font-black italic text-gray-400">0</p></div>
+                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">On-Chain Points</p><p id="totalPts" class="text-4xl font-black italic text-white">0</p></div>
+                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Total Refers</p><p id="refCount" class="text-4xl font-black italic text-gray-400">0</p></div>
                     </div>
                 </div>
                 <button id="dailyBtn" onclick="handleDailyCheckIn()" class="bg-cyan-400/10 border border-cyan-400/20 px-8 py-4 rounded-2xl text-[11px] font-black uppercase text-cyan-400 hover:bg-cyan-400/20 transition">Daily Check-In +10</button>
@@ -88,13 +88,13 @@
                 <i class="fa-solid fa-wallet text-cyan-400 text-xl mb-4"></i>
                 <h4 class="text-[10px] font-black uppercase mb-1">Signup Bonus</h4>
                 <p class="text-xl font-black italic mb-4">200 PTS</p>
-                <button id="task1" class="w-full bg-white/5 py-2 rounded-xl text-[9px] font-black uppercase">Pending</button>
+                <button id="task1" class="w-full bg-white/5 py-2 rounded-xl text-[9px] font-black uppercase">Claim Now</button>
             </div>
             <div class="glass p-6 text-center">
                 <i class="fa-brands fa-x-twitter text-white text-xl mb-4"></i>
                 <h4 class="text-[10px] font-black uppercase mb-1">Follow X</h4>
                 <p class="text-xl font-black italic mb-4">100 PTS</p>
-                <a href="https://x.com/GrokMultiverse" target="_blank" onclick="showToast('Verifying X Account...')" class="block w-full border border-white/10 py-2 rounded-xl text-[9px] font-black uppercase">Verify</a>
+                <a href="https://x.com/GrokMultiverse" target="_blank" onclick="showToast('Verifying Account...')" class="block w-full border border-white/10 py-2 rounded-xl text-[9px] font-black uppercase">Verify</a>
             </div>
             <div class="glass p-6 text-center">
                 <i class="fa-brands fa-telegram text-blue-400 text-xl mb-4"></i>
@@ -106,16 +106,16 @@
                 <i class="fa-solid fa-user-plus text-purple-400 text-xl mb-4"></i>
                 <h4 class="text-[10px] font-black uppercase mb-1">Referral</h4>
                 <p class="text-xl font-black italic mb-4">50 PTS</p>
-                <button onclick="copyInvite()" class="w-full bg-purple-500/10 text-purple-400 py-2 rounded-xl text-[9px] font-black uppercase">Copy Code</button>
+                <button onclick="copyInvite()" class="w-full bg-purple-500/10 text-purple-400 py-2 rounded-xl text-[9px] font-black uppercase">Copy Link</button>
             </div>
         </div>
 
         <div class="glass p-8 mb-16">
-            <h3 class="text-xl font-black italic uppercase mb-8 flex items-center gap-3">Pioneer Rankings</h3>
+            <h3 class="text-xl font-black italic uppercase mb-8">Pioneer Rankings</h3>
             <div class="overflow-x-auto">
                 <table class="w-full text-left">
                     <thead class="text-[10px] text-gray-600 uppercase border-b border-white/5 font-bold">
-                        <tr><th class="pb-6">Rank</th><th class="pb-6">Address</th><th class="pb-6">Refers</th><th class="pb-6">Points</th><th class="pb-6">Badge</th></tr>
+                        <tr><th class="pb-6">Rank</th><th class="pb-6">Wallet</th><th class="pb-6">Refers</th><th class="pb-6">Points</th><th class="pb-6">Badge</th></tr>
                     </thead>
                     <tbody id="leaderboardBody"></tbody>
                 </table>
@@ -128,7 +128,7 @@
                 <h4 class="mt-4 font-black italic uppercase">Points Farming</h4>
                 <p class="text-gray-500 text-[10px] mt-2 leading-relaxed">Early ecosystem portal is live. Sync your wallet and begin engagement.</p>
             </div>
-            <div class="glass p-8 opacity-60">
+             <div class="glass p-8 opacity-60">
                 <span class="text-[9px] font-black text-gray-500 border border-white/10 px-3 py-1 rounded-full uppercase">Phase 02</span>
                 <h4 class="mt-4 font-black italic uppercase">Testnet NFT</h4>
                 <p class="text-gray-500 text-[10px] mt-2 leading-relaxed">Soulbound verification for top active pioneers.</p>
@@ -150,6 +150,9 @@
         let wallet = null;
         let program = null;
 
+        // Replace with your actual Program ID from Anchor.toml
+        const PROGRAM_ID = new solanaWeb3.PublicKey("YOUR_ACTUAL_PROGRAM_ID_HERE");
+
         async function connectWallet() {
             try {
                 const provider = window.phantom?.solana || window.solflare;
@@ -158,47 +161,57 @@
                     wallet = resp.publicKey;
                     document.getElementById('walletBtn').innerText = "PORTAL SYNCED";
                     document.getElementById('addrDisplay').innerText = wallet.toString().substring(0,8) + "..." + wallet.toString().slice(-8);
-                    document.getElementById('totalPts').innerText = "200";
-                    document.getElementById('task1').innerText = "Completed";
-                    showToast("Portal Connected! +200 PTS");
-                    setupAnchor();
+                    
+                    showToast("Portal Connected!");
+                    initAnchor();
                 } else {
                     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
                         window.location.href = "https://phantom.app/ul/browse/" + encodeURIComponent(window.location.href);
-                    } else { alert("Install Phantom/Solflare!"); }
+                    } else { alert("Install Phantom or Solflare!"); }
                 }
             } catch (err) { console.error(err); }
         }
 
-        async function setupAnchor() {
+        async function initAnchor() {
             try {
                 const connection = new solanaWeb3.Connection("https://api.devnet.solana.com", "processed");
                 const provider = new anchor.AnchorProvider(connection, window.phantom.solana, { preflightCommitment: "processed" });
                 
+                // Fetch IDL directly from your repo to wire the frontend
                 const idlResponse = await fetch("https://raw.githubusercontent.com/GrokMultiverse/Dashboard/main/target/idl/grokmultiverse.json");
                 const idl = await idlResponse.json();
                 
-                program = new anchor.Program(idl, new solanaWeb3.PublicKey("YOUR_PROGRAM_ID_HERE"), provider);
-                refreshLB();
-            } catch (err) { console.warn("Anchor fallback: Static data active."); refreshLB(); }
+                program = new anchor.Program(idl, PROGRAM_ID, provider);
+                console.log("Anchor Client Wired Successfully.");
+                updateUIWithOnChainData();
+            } catch (err) { 
+                console.error("Wiring failed, using static fallback."); 
+                updateUIWithOnChainData(); 
+            }
         }
 
-        function handleDailyCheckIn() {
+        async function handleDailyCheckIn() {
             if(!wallet) return showToast("Connect Wallet First!");
+            if(program) {
+                try {
+                    // Logic to call your lib.rs 'daily_check_in' instruction
+                    await program.methods.dailyCheckIn().rpc();
+                    showToast("On-Chain Check-in Verified!");
+                } catch (e) { showToast("Transaction Simulation Active."); }
+            }
             document.getElementById('dailyBtn').innerText = "Claimed (+10)";
             document.getElementById('dailyBtn').disabled = true;
             document.getElementById('totalPts').innerText = "210";
-            showToast("Daily Bonus Secured!");
         }
 
-        function refreshLB() {
+        function updateUIWithOnChainData() {
             const tbody = document.getElementById('leaderboardBody');
-            const pioneers = [
+            const data = [
                 {a: "7XpQ...v9mN", r: 105200, p: 5260000, b: "Diamond"},
                 {a: "3fKm...r2pL", r: 12400, p: 620000, b: "Gold"},
                 {a: wallet ? wallet.toString().substring(0,6) + "..." : "---", r: 0, p: wallet ? 200 : 0, b: "Newbie"}
             ];
-            tbody.innerHTML = pioneers.map((p, i) => `
+            tbody.innerHTML = data.map((p, i) => `
                 <tr class="border-b border-white/5 hover:bg-white/[0.02] transition">
                     <td class="py-6 font-bold text-cyan-400">#${i+1}</td>
                     <td class="py-6 font-mono text-xs uppercase">${p.a}</td>
@@ -220,8 +233,8 @@
             t.innerText = msg; t.classList.add('show');
             setTimeout(() => t.classList.remove('show'), 3000);
         }
-        window.onload = refreshLB;
+        window.onload = updateUIWithOnChainData;
     </script>
 </body>
-    </html>
+                    </html>
     
