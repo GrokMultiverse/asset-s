@@ -1,0 +1,31 @@
+{
+  "name": "GrokMultiverse Testnet Genesis",
+  "symbol": "DEV",
+  "description": "This is the official Genesis Testing NFT for the GrokMultiverse ecosystem, deployed exclusively on the Solana Devnet. This asset is strictly for protocol validation and system stress-testing purposes.\n\nTechnical Constraints:\n- Limited Issuance: One-time mint for authorized testers.\n- Non-Transferable: Bound to the original minter's wallet.\n- Zero Commercial Value: Devnet-only asset, 'Proof of Testing' certificate.",
+  "image": "https://raw.githubusercontent.com/GrokMultiverse/Dashboard/main/logo.png",
+  "attributes": [
+    {
+      "trait_type": "Phase",
+      "value": "1"
+    },
+    {
+      "trait_type": "Purpose",
+      "value": "Protocol Validation"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://raw.githubusercontent.com/GrokMultiverse/Dashboard/main/logo.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "8LMWS1r1hyqiRv94TFKA1pVUGmxGQQJCQHohZEmiUXN8",
+        "share": 100
+      }
+    ]
+  }
+}
