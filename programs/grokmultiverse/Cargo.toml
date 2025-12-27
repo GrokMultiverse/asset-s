@@ -1,20 +1,19 @@
 [package]
-name = "grokmultiverse"
+name = "grok_genesis"
 version = "0.1.0"
 description = "Created with Solana Playground"
 edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "grokmultiverse"
+
+[dependencies]
+anchor-lang = "0.29.0"
+anchor-spl = "0.29.0"
+mpl-token-metadata = { version = "1.9.0", features = ["no-entrypoint"] }
 
 [features]
 no-entrypoint = []
 no-idl = []
-no-log-heap = []
 cpi = ["no-entrypoint"]
 default = []
-
-[dependencies]
-anchor-lang = "0.29.0"
-
